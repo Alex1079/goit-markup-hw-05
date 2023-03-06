@@ -43,7 +43,7 @@
             <div class="conteiner">
                 <div class="hero-conteiner">
                     <h1 class="page-logo"> Effective Solutions for Your Business </h1>
-                    <button type="button" class="button-service"> Order Service </button>
+                    <button type="button" data-modal-open class="button-service"> Order Service </button>
                 </div>
             </div>
         </section>
@@ -261,6 +261,14 @@
             </div>
         </div>
     </footer>
+    <div class="beckdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="modal-close" type="button" data-modal-close><svg class="beckdrop-modal-icon">
+                    <use href="./images/icons.svg#icon-close-black"></use></svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
