@@ -97,10 +97,11 @@
     display: block;
     color: var(--color-primary-dark);
     position: relative;
+    transition-property: color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
-  .navigation .link.current::after {
+  .current::after {
     position: absolute;
     bottom: 0;
     display: block;
@@ -110,7 +111,8 @@
     background: var(--clr-button-on);
     border-radius: 2px;
   }
-  .navigation .link:hover {
+  .navigation .link:hover,
+  .navigation .link:focus {
     color: var(--clr-button-on);
     letter-spacing: 0.02em;
   }
@@ -124,7 +126,10 @@
     letter-spacing: 0.02em;
     text-decoration: none;
     font-style: normal;
-    color: var(--color-primary)
+    color: var(--color-primary);
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
   }
   .mail:hover {
     color: var(--clr-button-on);
@@ -147,11 +152,16 @@
     display: block;
     color: var(--color-primary);
     letter-spacing: 0.02em;
+    transition-property: color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
   
   .page-addres .link:hover {
+    color: var(--clr-button-on);
+  }
+
+  .page-addres .link:focus {
     color: var(--clr-button-on);
   }
   .logo-first {
@@ -209,6 +219,7 @@
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    transition-property: background-color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
@@ -317,6 +328,7 @@
     justify-content: center;
     fill: var(--clr-background-dark);
     border-radius: 50%;
+    transition-property: background-color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
@@ -360,7 +372,7 @@
     line-height: 24px;
     color: var(--clr-primary-inverted);
     letter-spacing: 0.02em;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
   }
   
   .footer-lisst {
@@ -380,6 +392,7 @@
     justify-content: center;
     fill: var(--clr-background-dark);
     border-radius: 50%;
+    transition-property: background;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
@@ -439,6 +452,7 @@
     border-radius: 4px;
     padding: 12px 24px;
     font-family: "Roboto";
+    transition-property: background, color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
@@ -580,6 +594,7 @@
   .portfolio-link {
     display: block;
     text-decoration: none;
+    transition-property: box-shadow;    
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
@@ -599,6 +614,7 @@
   .overlej-image {
     position: relative;
     overflow: hidden;
+    
   }
   .overlej-info {
     position: absolute;
@@ -613,6 +629,7 @@
   .portfolio-link:hover .overlej-info {
     transform: translateY(0);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
   }
   .portfolio-link:focus .overlej-info {
     transform: translateY(0);
@@ -692,15 +709,34 @@
     gap: 24px;
     justify-content: center;
   }
-  .customers-item {
+  customers-item {
+    width: 168px;
+    height: 88px;    
+  }
+  .customers-item .customers-link {
+    display: inline-block;
     width: 168px;
     height: 88px;
+    padding: 16px 31px;
+    border: 1px solid var(--color-customers);
     border-radius: 4px;
+    color: var(--color-customers);
+    transition-property: border-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .customers-item:hover {
-    border: 1px solid var(--clr-button-on);
+  .customers-item .customers-link:hover,
+  .customers-item .customers-link:focus {
+    border-color: var(--clr-button-on);
+    color: var(--clr-button-on);
   }
-  .customers-link {
+  .customers-icon {
+    display: block;
+    width: 104px;
+    height: 56px;
+    fill: currentColor;    
+  }
+  customers-link {
     width: 100%;
     height: 100%;
     display: flex;
@@ -710,21 +746,27 @@
     border: 1px solid var(--color-customers);
     border-radius: 4px;
     color: var(--color-customers);
+    transition-property: fill, border;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
   
-  .customers-link:hover .customers-icon,
-  .customers-link:focus .customers-icon {
+  customers-link:hover,
+  customers-link:focus {
     fill: var(--clr-button-on);
-    border-color: var(--clr-button-on)
-    
+    border: 1px solid var(--clr-button-on);    
   }
- 
-  .customers-icon {
+  customers-icon {
     width: 104px;
     height: 56px;
     fill: currentColor;
+  }
+  
+  customers-icon:hover,
+  customers-icon:focus {
+    fill: var(--clr-button-on);
+    
+    
   }
   .beckdrop {
     position: fixed;
@@ -769,6 +811,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-property: background, fill, cursor;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
   }
